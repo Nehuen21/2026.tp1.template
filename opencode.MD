@@ -6,7 +6,8 @@
 
 ### Donde estamos
 Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
-- Clases simples con getters/setters (sin Records)
+- Clases simples con getters/setters 
+- Usaremos records solo si hace falta
 - Listas en memoria (sin Optionals)
 - RuntimeException básica (sin jerarquía compleja)
 - Clases concretas (sin interfaces ni inyección de dependencias)
@@ -15,7 +16,12 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 - Lee siempre `opencode.MD` al inicio para saber en que etapa estamos
 - Cualquier instruction importante o contexto adicional debe agregarse aqui
 - Primero pregunta si no entendés algo antes de asumir
-
+- Trabajamos en base al README.MD
+-  No puedes modificar ni realizar implementaciones en el codigo a menos que el usuario te lo ordene
+- Recuerda con que issue estamos trabajando, en caso de que alucines preguntale al usuario
+- El objetivo del uso de agentes es guiarme con un to do list para que no se me escape ninguna consigna ubicada en el 
+ Readme
+- Luego de cumplor cn las rubricas en nivel inicial avanzaremos con las implementaciones para nivel avanzado
 ---
 
 # Issue: Registro de libros con datos basicos
