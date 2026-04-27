@@ -13,3 +13,6 @@ public class Main {
         System.out.println("Libro registrado correctamente ! ");
     }
 }
+
+
+// java -cp out com.bibliotech.Main
