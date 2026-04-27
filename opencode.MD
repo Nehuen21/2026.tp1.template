@@ -21,7 +21,9 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 - Recuerda con que issue estamos trabajando, en caso de que alucines preguntale al usuario
 - El objetivo del uso de agentes es guiarme con un to do list para que no se me escape ninguna consigna ubicada en el 
  Readme
-- Luego de cumplor cn las rubricas en nivel inicial avanzaremos con las implementaciones para nivel avanzado
+- Luego de cumplir con las rubricas en nivel inicial avanzaremos con las implementaciones para nivel avanzado
+- Cada vez que el usuario te pide hacer un commit hazlo bajo el estandar de conventional commits, verifica que estamos
+trabajando sobre la rama adecuada (rama creada a partir del issue que estamos resolviendo, en caso de perderte pregunta.)
 ---
 
 # Issue: Registro de libros con datos basicos
