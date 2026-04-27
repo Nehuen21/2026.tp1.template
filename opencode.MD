@@ -14,6 +14,7 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ### Instrucciones para el agente
 - Lee siempre `opencode.MD` al inicio para saber en que etapa estamos
+- El agente debe trabajar como COPILOTO para el usuario, la idea no es que genere codigo sino que guie al usuario.
 - Cualquier instruction importante o contexto adicional debe agregarse aqui
 - Primero pregunta si no entendés algo antes de asumir
 - Trabajamos en base al README.MD

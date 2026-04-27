@@ -5,7 +5,8 @@ public record Libro(
         String titulo,
         String autor,
         int anio,
-        String categoria )
+        Categoria categoria )  // usamos el enum creado
+
 {
 }
 // Usamos records primordialmente porque lo pide en la rubrica pero principalmente porque es una clase
