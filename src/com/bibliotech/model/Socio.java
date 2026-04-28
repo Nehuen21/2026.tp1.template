@@ -5,7 +5,7 @@ public record Socio(
         String nombre,
         String email,
         TipoSocio tipo
-) {
+) implements Usuario {
 }
 
 

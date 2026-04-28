@@ -59,21 +59,29 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue: Registro de socios con validación de datos
+## Resumen Sesión Anterior (Issue #9)
+✅ **Completado**: Registro de socios con validación de datos
+- TipoSocio enum con limite de libros (ESTUDIANTE 3, DOCENTE 5)
+- Socio record con dni, nombre, email, tipo
+- SocioRepository con guardar, buscarPorDni, buscarTodos
+- SocioExistenteException y EmailInvalidoException
+- SocioService con registrar() validando DNI único y email
+- Main prueba registro de socios - compila y ejecuta correctamente
+
+---
+
+# Issue: Categorización de socios: Estudiantes y Docentes
 
 ## Descripcion
-Crear la clase Socio con DNI y email. Validar que el DNI sea único y que el mail tenga formato correcto antes de registrar al socio.
+Crear las clases Estudiante y Docente como subtipos de Socio. Estudiante puede tener hasta 3 libros prestados, docente hasta 5.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Crear enum `TipoSocio` (ESTUDIANTE, DOCENTE)
-- [ ] 2. Crear clase `Socio` con atributos: dni, nombre, email, tipo (record o clase)
-- [ ] 3. Crear `SocioRepository` con métodos: guardar, buscarPorDni, buscarTodos
-- [ ] 4. Crear excepción `SocioExistenteException` (extiende RuntimeException)
-- [ ] 5. Crear excepción `EmailInvalidoException`
-- [ ] 6. Crear `SocioService` con método registrar()
-- [ ] 7. Implementar validación de DNI único y email con formato correcto
-- [ ] 8. Actualizar Main para probar registro de socios
-- [ ] 9. Compilar y verificar
+- [ ] 1. Crear interfaz `Usuario` (similar a Recurso para libros)
+- [ ] 2. Actualizar `Socio` para implementar `Usuario`
+- [ ] 3. Crear `Estudiante` (record) con atributos y límite 3
+- [ ] 4. Crear `Docente` (record) con atributos y límite 5
+- [ ] 5. Actualizar Main para probar ambos tipos
+- [ ] 6. Compilar y verificar
