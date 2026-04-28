@@ -1,21 +1,20 @@
 package com.bibliotech.service;
-
 import com.bibliotech.exception.LibroExistenteException;
-import com.bibliotech.model.Libro;
+import com.bibliotech.model.Recurso;
 import com.bibliotech.repository.LibroRepository;
 
 public class LibroService {
     private LibroRepository repositorio = new LibroRepository();
-    public void registrar(Libro libro ){
+    public void registrar(Recurso recurso ){
 
-        if (repositorio.buscarPorId(libro.isbn()) != null){
-            throw new LibroExistenteException("El ISBN"+ libro.isbn() + "Ya existe");
+        if (repositorio.buscarPorId(recurso.isbn()) != null){
+            throw new LibroExistenteException("El ISBN"+ recurso.isbn() + "Ya existe");
         }
-        if (libro.isbn() == null || libro.isbn().isBlank()){
+        if (recurso.isbn() == null || recurso.isbn().isBlank()){
             throw new IllegalArgumentException("El isbn no puede estar vacio");
 
               }
-        repositorio.guardar(libro);
+        repositorio.guardar(recurso);
     }
 
 }

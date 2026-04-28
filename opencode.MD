@@ -24,23 +24,34 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
  Readme
 - Luego de cumplir con las rubricas en nivel inicial avanzaremos con las implementaciones para nivel avanzado
 - Cada vez que el usuario te pide hacer un commit hazlo bajo el estandar de conventional commits, verifica que estamos
-trabajando sobre la rama adecuada (rama creada a partir del issue que estamos resolviendo, en caso de perderte pregunta.)
+ trabajando sobre la rama adecuada (rama creada a partir del issue que estamos resolviendo, en caso de perderte pregunta.)
+
 ---
 
-# Issue: Registro de libros con datos basicos
+## Resumen Sesión Anterior (Issue #6)
+✅ **Completado**: Registro de libros con datos básicos
+- Categoria enum con id y nombre
+- Libro record con isbn, titulo, autor, anio, categoria
+- LibroRepository con guardar, buscarPorId, buscarTodos
+- LibroExistenteException
+- LibroService con lógica de registrar()
+- Main de prueba - compila y ejecuta correctamente
+
+---
+
+# Issue: Soporte para Libro Físico y E-book
 
 ## Descripcion
-Crear la clase Libro con los atributos ISBN, titulo, autor, año y categoria. Implementar la funcionalidad para registrar un libro en el sistema y almacenarlo en memoria.
+Crear las clases LibroFisico y Ebook como subtipos de Libro. Ambos deben poder registrarse y distinguirse dentro del sistema.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Crear la clase `Categoria` en `com.bibliotech.model` como enum para las categorias de libros
-- [ ] 2. Crear la clase `Libro` en `com.bibliotech.model` con atributos: isbn, titulo, autor, anio, categoria ( getters y setters)
-- [ ] 3. Crear la clase `LibroRepository` en `com.bibliotech.repository` con metodos: guardar, buscarPorId, buscarTodos (usa List en memoria)
-- [ ] 4. Crear la excepcion `LibroExistenteException` en `com.bibliotech.exception` (extiende RuntimeException)
-- [ ] 5. Crear la clase `LibroService` en `com.bibliotech.service` con el metodo para registrar libro
-- [ ] 6. Implementar metodo registrar() que valide ISBN unico y guarde en repositorio
-- [ ] 7. Crear clase `Main` basica para probar el flujo de registro
-- [ ] 8. Compilar y verificar que funcione correctamente
+- [ ] 1. Analizar cómo implementar herencia/subtipos (extender record o usar interfaz)
+- [ ] 2. Crear clase `LibroFisico` con atributos específicos (ej: condicion, ubicacion)
+- [ ] 3. Crear clase `Ebook` con atributos específicos (ej: formato, tamanoArchivo)
+- [ ] 4. Actualizar `LibroRepository` para manejar ambos tipos
+- [ ] 5. Actualizar `LibroService` para validar y registrar subtipos
+- [ ] 6. Actualizar Main para probar registro de ambos tipos
+- [ ] 7. Compilar y verificar que funcione correctamente
