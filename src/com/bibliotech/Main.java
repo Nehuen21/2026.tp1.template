@@ -48,6 +48,13 @@ public class Main {
             System.out.println("Email invalido" + e.getMessage() );
         }
 
+        Estudiante estudiante = new Estudiante(37373,"Tomas","nose@gmail.com",TipoSocio.ESTUDIANTE);
+        socioService.registrar(estudiante);
+        System.out.println("Esutidante registrado" + estudiante);
+
+        Docente docente = new Docente(39389,"Carlito","carlito@gmail.com",TipoSocio.DOCENTE);
+        socioService.registrar(docente);
+        System.out.print("Docente registrado exitosamente" + docente);
 
     }
 

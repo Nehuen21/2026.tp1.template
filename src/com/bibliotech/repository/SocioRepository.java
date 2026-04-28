@@ -1,25 +1,26 @@
 package com.bibliotech.repository;
 
 import com.bibliotech.model.Socio;
+import com.bibliotech.model.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SocioRepository {
-    private List<Socio> lista = new ArrayList<>();
+    private List<Usuario> lista = new ArrayList<>();
 
-    public void guardar(Socio socio){
-        lista.add(socio);
+    public void guardar(Usuario usuario){
+        lista.add(usuario);
 
     }
-    public Socio buscarPorDNi(int dni){
-        for (Socio s : lista){
-            if (s.dni()== dni) return s;
+    public Usuario buscarPorDNi(int dni){
+        for (Usuario u : lista){
+            if (u.dni()== dni) return u;
 
         }
         return null;
     }
-    public List<Socio> buscarTodos(){
+    public List<Usuario> buscarTodos(){
         return new ArrayList<>(lista);
     }
 }
