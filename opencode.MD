@@ -50,17 +50,30 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue: Búsqueda de libros por título, autor y categoría
+## Resumen Sesión Anterior (Issue #8)
+✅ **Completado**: Búsqueda de libros por título, autor y categoría
+- Recurso interface ampliada con autor() y categoria()
+- LibroRepository con buscarPorTitulo, buscarPorAutor, buscarPorCategoria
+- LibroService expone los métodos de búsqueda
+- Búsqueda parcial e ignore case
+
+---
+
+# Issue: Registro de socios con validación de datos
 
 ## Descripcion
-Implementar la funcionalidad de búsqueda que permita filtrar libros por título, autor o categoría. Debe retornar los resultados que coincidan con el criterio ingresado.
+Crear la clase Socio con DNI y email. Validar que el DNI sea único y que el mail tenga formato correcto antes de registrar al socio.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Agregar métodos de búsqueda en `LibroRepository` (buscarPorTitulo, buscarPorAutor, buscarPorCategoria)
-- [ ] 2. Crear métodos de búsqueda en `LibroService`
-- [ ] 3. Implementar lógica de filtrado (búsqueda parcial, sin importar mayúsculas/minúsculas)
-- [ ] 4. Actualizar Main para probar búsquedas
-- [ ] 5. Compilar y verificar
+- [ ] 1. Crear enum `TipoSocio` (ESTUDIANTE, DOCENTE)
+- [ ] 2. Crear clase `Socio` con atributos: dni, nombre, email, tipo (record o clase)
+- [ ] 3. Crear `SocioRepository` con métodos: guardar, buscarPorDni, buscarTodos
+- [ ] 4. Crear excepción `SocioExistenteException` (extiende RuntimeException)
+- [ ] 5. Crear excepción `EmailInvalidoException`
+- [ ] 6. Crear `SocioService` con método registrar()
+- [ ] 7. Implementar validación de DNI único y email con formato correcto
+- [ ] 8. Actualizar Main para probar registro de socios
+- [ ] 9. Compilar y verificar
