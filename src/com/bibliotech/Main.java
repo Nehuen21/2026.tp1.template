@@ -1,10 +1,9 @@
 package com.bibliotech;
 
-import com.bibliotech.model.Categoria;
-import com.bibliotech.model.Ebook;
-import com.bibliotech.model.Libro;
-import com.bibliotech.model.LibroFisico;
+import com.bibliotech.model.*;
 import com.bibliotech.service.LibroService;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +17,20 @@ public class Main {
 
         servicio.registrar(fisico);
         servicio.registrar(ebook);
+
+        List<Recurso> resultadosTitulo = servicio.buscarPorTitulo("El principito");
+        System.out.println("por titulo" + resultadosTitulo);
+
+        List<Recurso> resultadosAutor = servicio.buscarPorAutor("Facundo Lucero");
+        System.out.println("por Autor" + resultadosAutor);
+
+        List<Recurso> resultadosCategoria = servicio.buscarPorCategoria(Categoria.ARTE);
+        System.out.println("por categoria" + resultadosCategoria);
+
+        System.out.println("Todos los recursos"+ servicio.buscarTodos());
+
     }
+
 }
 
 

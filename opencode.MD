@@ -39,19 +39,28 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue: Soporte para Libro Físico y E-book
+## Resumen Sesión Actual (Issue #7)
+✅ **Completado**: Soporte para Libro Físico y E-book
+- Interfaz Recurso con isbn() y titulo()
+- LibroFisico (record) con condicion, ubicacion
+- Ebook (record) con formato, tamanoArchivo
+- LibroRepository actualizado para usar Recurso (polimorfismo)
+- LibroService.registrar() acepta Recurso
+- Main prueba ambos tipos - compila y ejecuta correctamente
+
+---
+
+# Issue: Búsqueda de libros por título, autor y categoría
 
 ## Descripcion
-Crear las clases LibroFisico y Ebook como subtipos de Libro. Ambos deben poder registrarse y distinguirse dentro del sistema.
+Implementar la funcionalidad de búsqueda que permita filtrar libros por título, autor o categoría. Debe retornar los resultados que coincidan con el criterio ingresado.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Analizar cómo implementar herencia/subtipos (extender record o usar interfaz)
-- [ ] 2. Crear clase `LibroFisico` con atributos específicos (ej: condicion, ubicacion)
-- [ ] 3. Crear clase `Ebook` con atributos específicos (ej: formato, tamanoArchivo)
-- [ ] 4. Actualizar `LibroRepository` para manejar ambos tipos
-- [ ] 5. Actualizar `LibroService` para validar y registrar subtipos
-- [ ] 6. Actualizar Main para probar registro de ambos tipos
-- [ ] 7. Compilar y verificar que funcione correctamente
+- [ ] 1. Agregar métodos de búsqueda en `LibroRepository` (buscarPorTitulo, buscarPorAutor, buscarPorCategoria)
+- [ ] 2. Crear métodos de búsqueda en `LibroService`
+- [ ] 3. Implementar lógica de filtrado (búsqueda parcial, sin importar mayúsculas/minúsculas)
+- [ ] 4. Actualizar Main para probar búsquedas
+- [ ] 5. Compilar y verificar
