@@ -1,20 +1,20 @@
 package com.bibliotech.repository;
-import com.bibliotech.model.Libro;
+import com.bibliotech.model.Recurso;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LibroRepository {
-    private final List<Libro> lista = new ArrayList<>();
-    public void guardar(Libro libro){
-        lista.add(libro);
+    private final List<Recurso> lista = new ArrayList<>();
+    public void guardar(Recurso recurso){
+        lista.add(recurso);
     }
-    public Libro buscarPorId(String isbn){
-        for (Libro l : lista){
-            if (l.isbn().equals(isbn))return l ;
+    public Recurso buscarPorId(String isbn){
+        for (Recurso r : lista){
+            if (r.isbn().equals(isbn))return r ;
         }
         return null;
     }
-    public List<Libro> buscarTodos(){
+    public List<Recurso> buscarTodos(){
         return new ArrayList<>(lista);
     }
 
@@ -22,10 +22,4 @@ public class LibroRepository {
 
 
 
-// UN repository es una clase que maneja el acceso a datos. es una capa entre el Service (logica de negocioy el almacenamiento
-// (memoria,base de datos,archivo)
 
-// SU proposito es:
-// centralizar operaciones crud
-// Abstraer como se almacenan los datos
-// EL service no sabe si los datos vienen de una lista en memoria, bd etc

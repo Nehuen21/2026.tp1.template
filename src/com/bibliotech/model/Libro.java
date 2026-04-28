@@ -5,7 +5,7 @@ public record Libro(
         String titulo,
         String autor,
         int anio,
-        Categoria categoria )  // usamos el enum creado
+        Categoria categoria )implements Recurso  // usamos el enum creado
 
 {
 }
