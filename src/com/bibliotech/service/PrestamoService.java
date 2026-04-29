@@ -9,6 +9,7 @@ import com.bibliotech.model.Usuario;
 import com.bibliotech.repository.LibroRepository;
 import com.bibliotech.repository.SocioRepository;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class PrestamoService {
@@ -60,4 +61,46 @@ public class PrestamoService {
     private int generarID() {
         return contador++;
     }
+
+    public void registrarDevolucion(String isbn) {
+        // 1. Buscar préstamo activo del libro
+        List<Transaccion> transacciones = historialService.buscarPorLibro(isbn);
+        Transaccion prestamoActivo = null;
+        for (Transaccion t : transacciones) {
+            if (t.tipo() == TipoTransaccion.PRESTAMO) {
+                prestamoActivo = t;
+                break;
+            }
+        }
+
+        if (prestamoActivo == null) {
+            throw new IllegalArgumentException("No existe un préstamo activo para este libro");
+        }
+
+        // 2. Calcular días transcurridos
+        LocalDate fechaPrestamo = prestamoActivo.fecha();
+        LocalDate hoy = LocalDate.now();
+        long diasTranscurridos = ChronoUnit.DAYS.between(fechaPrestamo, hoy);
+
+        // 3. Definir límite (ej: 7 días)
+        int limiteDias = 7;
+        long diasRetraso = 0;
+        if (diasTranscurridos > limiteDias) {
+            diasRetraso = diasTranscurridos - limiteDias;
+        }
+
+        // 4. Registrar devolución
+        Transaccion devolucion = new Transaccion(
+            generarID(),
+            isbn,
+            prestamoActivo.dniSocio(),
+            TipoTransaccion.DEVOLUCION,
+            hoy
+        );
+        historialService.registrarTransaccion(devolucion);
+
+        // 5. Mostrar resultado
+        System.out.println("Devolución registrada. Días de retraso: " + diasRetraso);
+    }
+
 }
