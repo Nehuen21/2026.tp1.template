@@ -5,8 +5,9 @@ import com.bibliotech.model.*;
 import com.bibliotech.service.LibroService;
 import com.bibliotech.service.SocioService;
 
+import java.time.LocalDate;
 import java.util.List;
-
+ import com.bibliotech.service.HistorialService;
 public class Main {
     public static void main(String[] args) {
         System.out.println("BiblioTech iniciado.");
@@ -18,7 +19,7 @@ public class Main {
         Libro libro = new Libro("978-3-16-148410-0", "El principito","Antoine de Saint-Exepury",1943, Categoria.ARTE);
         servicio.registrar(libro);
         System.out.println("Libro registrado correctamente ! ");
-        LibroFisico fisico = new LibroFisico("978-1","cien años","Garcia marquez",1967,Categoria.ARTE,"bueno","Estanteria A");
+        LibroFisico fisico = new LibroFisico("823727","cien años","Garcia marquez",1967,Categoria.ARTE,"bueno","Estanteria A");
         Ebook ebook = new Ebook("978","Percy Jackson","Facundo Lucero",2010,Categoria.CIENCIA,"PDF", 500000L);
         // registrar libro
         servicio.registrar(fisico);
@@ -55,6 +56,15 @@ public class Main {
         Docente docente = new Docente(39389,"Carlito","carlito@gmail.com",TipoSocio.DOCENTE);
         socioService.registrar(docente);
         System.out.print("Docente registrado exitosamente" + docente);
+
+
+        HistorialService historialService = new HistorialService();
+        Transaccion prestamo = new Transaccion(1,"823727",12345678,TipoTransaccion.PRESTAMO, LocalDate.now());
+        historialService.registrarTransaccion(prestamo);
+        Transaccion devolucion = new Transaccion(2,"823727",12345678,TipoTransaccion.DEVOLUCION, LocalDate.now());
+
+        System.out.println("Historial por socio: " + historialService.buscarPorSocio(12345678));
+        System.out.println("Todas las transacciones " + historialService.buscarTodos());
 
     }
 
