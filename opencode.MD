@@ -92,20 +92,30 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue #1: Registro de préstamos con verificación de disponibilidad y límites
+## Resumen Sesión Anterior (Issue #1)
+✅ **Completado**: Registro de préstamos con verificación de disponibilidad y límites
+- LibroNoDisponibleException y LimiteDePrestamosException
+- PrestamoService con registrarPrestamo()
+- Verifica libro existe y socio existe
+- Verifica límite de préstamos del socio (ESTUDIANTE 3, DOCENTE 5)
+- Registra transacción PRESTAMO en historial
+- Main prueba préstamos
+
+---
+
+# Issue #2: Devolución de libros con cálculo de días de retraso
 
 ## Descripcion
-Implementar lógica para registrar un préstamo. Verificar que el libro esté disponible y que el socio no haya superado su límite de préstamos antes de confirmar.
+Implementar la devolución de un libro. Calcular automáticamente cuántos días de retraso tuvo la devolución con respecto a la fecha esperada.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Crear excepción `LibroNoDisponibleException`
-- [ ] 2. Crear excepción `LimitePrestamosExcedidoException`
-- [ ] 3. Crear `PrestamoService` con método registrarPrestamo()
-- [ ] 4. Implementar verificación de disponibilidad del libro (no prestado)
-- [ ] 5. Implementar verificación de límite del socio (usar TipoSocio.getLimiteLibros())
-- [ ] 6. Registrar transacción en historial
-- [ ] 7. Actualizar Main para probar préstamos
-- [ ] 8. Compilar y verificar
+- [ ] 1. Crear método registrarDevolucion() en PrestamoService
+- [ ] 2. Buscar el préstamo activo del libro (sin devolución)
+- [ ] 3. Calcular días de retraso (fecha actual vs fecha del préstamo)
+- [ ] 4. Registrar transacción DEVOLUCION en historial
+- [ ] 5. Mostrar información del retraso (días)
+- [ ] 6. Actualizar Main para probar devoluciones
+- [ ] 7. Compilar y verificar

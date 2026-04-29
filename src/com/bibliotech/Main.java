@@ -71,6 +71,8 @@ public class Main {
         prestamoService.registrarPrestamo("823727",12345678);
         System.out.println("Prestamo registrado");
 
+        prestamoService.registrarDevolucion("823727");
+
     }
 
 }
