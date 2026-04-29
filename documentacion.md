@@ -47,7 +47,7 @@
 **Por qué se eligió:** Para `Categoria`, `TipoSocio` y `TipoTransaccion`, los enums son ideales porque:
 - Son un conjunto fijo de valores
 - Garantizan valores válidos
-- pueden携带 datos (como el límite de libros en TipoSocio)
+- pueden datos (como el límite de libros en TipoSocio)
 
 ---
 
