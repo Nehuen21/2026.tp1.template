@@ -3,6 +3,7 @@ package com.bibliotech;
 import com.bibliotech.exception.EmailInvalidoException;
 import com.bibliotech.model.*;
 import com.bibliotech.service.LibroService;
+import com.bibliotech.service.PrestamoService;
 import com.bibliotech.service.SocioService;
 
 import java.time.LocalDate;
@@ -65,6 +66,10 @@ public class Main {
 
         System.out.println("Historial por socio: " + historialService.buscarPorSocio(12345678));
         System.out.println("Todas las transacciones " + historialService.buscarTodos());
+
+        PrestamoService prestamoService = new PrestamoService();
+        prestamoService.registrarPrestamo("823727",12345678);
+        System.out.println("Prestamo registrado");
 
     }
 

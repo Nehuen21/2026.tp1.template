@@ -9,7 +9,7 @@
 | :--- |:----------|
 | **Nombre** | Nehuen    |
 | **Apellido** | Donozo    |
-| **Legajo** | 52325     |
+| **Legajo** | 62325     |
 
 > **Fecha de entrega:** 28 de Abril de 2026
 

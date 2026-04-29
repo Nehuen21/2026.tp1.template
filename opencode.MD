@@ -82,22 +82,30 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue: Registro histórico de prestamos y devoluciones
+## Resumen Sesión Anterior (Issue #10)
+✅ **Completado**: Registro histórico de préstamos y devoluciones
+- TipoTransaccion enum (PRESTAMO, DEVOLUCION)
+- Transaccion record con id, isbn, dniSocio, tipo, fecha
+- TransaccionRepository con guardar, buscarPorSocio, buscarPorLibro, buscarTodos
+- HistorialService para gestionar historial
+- Main prueba transacciones
+
+---
+
+# Issue #1: Registro de préstamos con verificación de disponibilidad y límites
 
 ## Descripcion
-Guardar un historial de todas las transacciones realizadas (prestamos y devoluciones) para poder consultarlas posteriormente.
-
-## Issues relacionados del Milestone
-- Issue #2: Devolución de libros con cálculo de días de retraso
-- Issue #1: Registro de préstamos con verificación de disponibilidad y límites
+Implementar lógica para registrar un préstamo. Verificar que el libro esté disponible y que el socio no haya superado su límite de préstamos antes de confirmar.
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Crear enum `TipoTransaccion` (PRESTAMO, DEVOLUCION)
-- [ ] 2. Crear record `Transaccion` con atributos: id, isbn, dniSocio, tipo, fecha
-- [ ] 3. Crear `TransaccionRepository` con métodos: guardar, buscarPorSocio, buscarPorLibro, buscarTodos
-- [ ] 4. Crear `HistorialService` para gestionar el historial
-- [ ] 5. Actualizar Main para probar registro de transacciones
-- [ ] 6. Compilar y verificar
+- [ ] 1. Crear excepción `LibroNoDisponibleException`
+- [ ] 2. Crear excepción `LimitePrestamosExcedidoException`
+- [ ] 3. Crear `PrestamoService` con método registrarPrestamo()
+- [ ] 4. Implementar verificación de disponibilidad del libro (no prestado)
+- [ ] 5. Implementar verificación de límite del socio (usar TipoSocio.getLimiteLibros())
+- [ ] 6. Registrar transacción en historial
+- [ ] 7. Actualizar Main para probar préstamos
+- [ ] 8. Compilar y verificar

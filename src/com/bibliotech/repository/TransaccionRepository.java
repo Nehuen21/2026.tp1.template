@@ -6,7 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransaccionRepository {
-    private List<Transaccion> lista = new ArrayList<>();
+    private static List<Transaccion> lista = new ArrayList<>();
+    private static TransaccionRepository instancia;
+    public static TransaccionRepository getInstancia() {
+        if (instancia == null) {
+            instancia = new TransaccionRepository();
+
+        }
+        return instancia;
+    }
 
     public void guardar(Transaccion transaccion){
         lista.add(transaccion);
