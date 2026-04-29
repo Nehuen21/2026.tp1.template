@@ -7,7 +7,7 @@ import com.bibliotech.model.Usuario;
 import com.bibliotech.repository.SocioRepository;
 
 public class SocioService {
-    private SocioRepository repositorio = new SocioRepository();
+    private SocioRepository repositorio = SocioRepository.getInstancia();
 
     private boolean esEmailValido(String email){
         return email != null && email.contains("@") && email.indexOf('.')> email.indexOf('@');

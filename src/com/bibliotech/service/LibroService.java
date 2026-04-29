@@ -7,7 +7,7 @@ import com.bibliotech.repository.LibroRepository;
 import java.util.List;
 
 public class LibroService {
-    private LibroRepository repositorio = new LibroRepository();
+    private static LibroRepository repositorio =  LibroRepository.getInstancia();
     public void registrar(Recurso recurso ){
 
         if (repositorio.buscarPorId(recurso.isbn()) != null){

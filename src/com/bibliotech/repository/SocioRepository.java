@@ -7,7 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SocioRepository {
-    private List<Usuario> lista = new ArrayList<>();
+    private static List<Usuario> lista = new ArrayList<>();
+    private static SocioRepository instancia;
+    public static SocioRepository getInstancia() {
+        if (instancia == null) {
+            instancia = new SocioRepository();
+
+        }
+        return instancia;
+    }
 
     public void guardar(Usuario usuario){
         lista.add(usuario);

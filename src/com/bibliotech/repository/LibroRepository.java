@@ -2,11 +2,19 @@ package com.bibliotech.repository;
 import com.bibliotech.model.Recurso;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 import com.bibliotech.model.Categoria;
 
 public class LibroRepository {
-    private final List<Recurso> lista = new ArrayList<>();
+    private static List<Recurso> lista = new ArrayList<>();
+    private  static LibroRepository instancia;
+    public static LibroRepository getInstancia(){
+        if (instancia== null){
+            instancia = new LibroRepository();
+
+        }
+        return instancia;
+    }
 
     public void guardar(Recurso recurso) {
         lista.add(recurso);

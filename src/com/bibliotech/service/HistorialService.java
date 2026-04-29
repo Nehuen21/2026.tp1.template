@@ -6,8 +6,15 @@ import com.bibliotech.repository.TransaccionRepository;
 import java.util.List;
 
 public class HistorialService {
-    private TransaccionRepository repositorio = new TransaccionRepository();
+    private static HistorialService instancia;
+    private static TransaccionRepository repositorio = TransaccionRepository.getInstancia();
+    public static HistorialService getInstancia(){
+        if (instancia == null) {
+            instancia = new HistorialService();
 
+        }
+        return instancia;
+    }
     public void registrarTransaccion(Transaccion transaccion){
         repositorio.guardar(transaccion);
     }
