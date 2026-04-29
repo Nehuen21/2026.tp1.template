@@ -70,18 +70,34 @@ Estamos en la **Parte 1: Bases** del sistema. Por ahora usamos:
 
 ---
 
-# Issue: Categorización de socios: Estudiantes y Docentes
+## Resumen Sesión Anterior (Issue #5)
+✅ **Completado**: Categorización de socios - Estudiantes y Docentes
+- Interfaz Usuario con dni(), nombre(), email()
+- Socio implementa Usuario
+- Estudiante (record) con TipoSocio.ESTUDIANTE
+- Docente (record) con TipoSocio.DOCENTE
+- SocioRepository usa Usuario (polimorfismo)
+- SocioService.registrar() acepta Usuario
+- Main prueba Socio, Estudiante y Docente
+
+---
+
+# Issue: Registro histórico de prestamos y devoluciones
 
 ## Descripcion
-Crear las clases Estudiante y Docente como subtipos de Socio. Estudiante puede tener hasta 3 libros prestados, docente hasta 5.
+Guardar un historial de todas las transacciones realizadas (prestamos y devoluciones) para poder consultarlas posteriormente.
+
+## Issues relacionados del Milestone
+- Issue #2: Devolución de libros con cálculo de días de retraso
+- Issue #1: Registro de préstamos con verificación de disponibilidad y límites
 
 ---
 
 ## To Do List (Nivel Inicial - Parte 1: Bases)
 
-- [ ] 1. Crear interfaz `Usuario` (similar a Recurso para libros)
-- [ ] 2. Actualizar `Socio` para implementar `Usuario`
-- [ ] 3. Crear `Estudiante` (record) con atributos y límite 3
-- [ ] 4. Crear `Docente` (record) con atributos y límite 5
-- [ ] 5. Actualizar Main para probar ambos tipos
+- [ ] 1. Crear enum `TipoTransaccion` (PRESTAMO, DEVOLUCION)
+- [ ] 2. Crear record `Transaccion` con atributos: id, isbn, dniSocio, tipo, fecha
+- [ ] 3. Crear `TransaccionRepository` con métodos: guardar, buscarPorSocio, buscarPorLibro, buscarTodos
+- [ ] 4. Crear `HistorialService` para gestionar el historial
+- [ ] 5. Actualizar Main para probar registro de transacciones
 - [ ] 6. Compilar y verificar
